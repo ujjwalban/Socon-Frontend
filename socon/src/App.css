@@ -1,0 +1,61 @@
+/* General styling remains the same */
+
+.sample-videos {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top: 40px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Keyframes for orbiting movement */
+@keyframes orbit-move {
+  0% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  25% {
+    transform: translate(100px, -150px) rotate(90deg);
+  }
+  50% {
+    transform: translate(200px, 0) rotate(180deg);
+  }
+  75% {
+    transform: translate(100px, 150px) rotate(270deg);
+  }
+  100% {
+    transform: translate(0, 0) rotate(360deg);
+  }
+}
+
+/* Initial animation for orbiting */
+.video-card {
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 0 0 rgba(0, 255, 204, 0.5);
+  width: 350px;
+  animation: orbit-move 4s ease-in-out forwards;
+}
+
+/* Stop animation after finishing */
+.video-card.stopped {
+  animation: none;
+  transform: translate(0, 0); /* Back to row */
+  box-shadow: 0 0 20px rgba(0, 255, 204, 0.2);
+}
+
+/* Video Styling */
+.video-preview {
+  display: block;
+  height: 100%;
+  width: 100%;
+  border: none;
+}
+
+.highlight {
+  font-size: 1.2rem;
+  color: #00ffcc;
+  text-shadow: 0 0 10px rgba(0, 255, 204, 0.8);
+}
